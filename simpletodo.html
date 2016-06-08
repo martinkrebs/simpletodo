@@ -29,18 +29,19 @@
             $('#saveTodoList').click(function(e){
                 e.preventDefault();
                 localStorage.setItem('todoList', todoList.innerHTML);
+                alert("Saved List");
             });
             $('#clearTodoList').click(function(e){
                 e.preventDefault();
                 localStorage.clear();
                 location.reload();
             });
-            loadToDo();
-            function loadToDo (){
+            function loadToDoList (){
                 if(localStorage.getItem('todoList')){
                     todoList.innerHTML = localStorage.getItem('todoList');
                 }
             }
+            loadToDoList();
         });
     </script>
     <!-- Latest compiled and minified JavaScript -->
